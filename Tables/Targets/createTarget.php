@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Astronaut</title>
+    <title>Create Target</title>
 </head>
 <body>
     <form action="" method="POST">
-        <label for="astr_id">Astronaut ID</label>
-        <br>
-        <input type="number" name="astr_id">
-        <br>
-        <br>
         <label for="name">Name</label>
         <br>
         <input type="text" name="name">
+        <br>
+        <br>
+        <label for="mission1">First Mission Date</label>
+        <br>
+        <input type="date" name="mission1">
+        <br>
+        <br>
+        <label for="type">Type</label>
+        <br>
+        <input type="text" name="type">
         <br>
         <br>
         <label for="mission_num">Number of Missions</label>
