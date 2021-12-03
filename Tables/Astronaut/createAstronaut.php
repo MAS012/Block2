@@ -29,10 +29,10 @@
 
 
     <?php
-    if(array_key_exists("btn", $_POST){
-    
-
-    })
+    if(array_key_exists("btn", $_POST)){
+    func1();
+    }
+    function func1(){
     $servername = "localhost";
     $username = "root"; // default username for localhost is root
     $password = ""; // default password for localhost is empty
@@ -49,14 +49,14 @@
     $name = $_POST["name"];
     $mission_num = $_POST["mission_num"];
 
-    $add = "INSERT INTO astro (astronaut_id,name,no_missions) VALUES ($astr_id,$name,$mission_num)";
+    $add = "INSERT INTO astronaut (astronaut_id,name,no_missions) VALUES ($astr_id,'$name',$mission_num)";
     if (!mysqli_query($conn,$add)) {
-        die("Error while adding: ". mysqli_error($add));
+        die("Error while adding: " . mysqli_error($conn));
     }
     else {
         echo "Successfully added";
     }
-    
+}
     
     ?>
 </body>
