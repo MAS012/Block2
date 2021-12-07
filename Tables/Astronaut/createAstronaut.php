@@ -70,6 +70,11 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #95e5a7;
     border:2px solid #02e534;
     color:white;
+    margin-top: 50px;
+    padding:10px 0;
+    border-radius:20px;
+    width:100%;
+    text-align: center;
 }
 </style>   
 </head>
@@ -87,10 +92,8 @@ input[type=number]::-webkit-outer-spin-button {
         <input class="inp" type="number" name="mission_num">
         <br>
         <br>
-        <input type="submit" name="btn" value="Submit" class="btn">
+        <input type="submit" name="btn" value="Submit" class="btn" onSubmit="window.location.reload()">
     </form>
-</div>
-
     <?php
     if(array_key_exists("btn", $_POST)){
     func1();
@@ -117,10 +120,10 @@ input[type=number]::-webkit-outer-spin-button {
         die("Error while adding: " . mysqli_error($conn));
     }
     else {
-        echo "Successfully added";
+        echo "<h4 class='success'>Successfully added</h4>";
     }
 }
-
 ?>
+</div>
 </body>
 </html>
