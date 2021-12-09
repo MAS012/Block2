@@ -39,7 +39,6 @@ body {
     transform:translate(50%,50%);
 }
 .btn:hover{
-    background-color: ;
     color: #ADFF2F;
     border:2px solid #ADFF2F;
 }
@@ -97,7 +96,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="#">Astro</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -163,11 +162,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
     <input class="inp" type="date" name="date">
     <br>
     <br>
-    <input class="btn" type="submit" value="Submit">
+    <input class="btn" type="submit" value="Submit" name="btn">
     </form>
 </div>
     <?php
+    include '../etc/validation.php';
+
     if(array_key_exists("btn", $_POST)){
+    echo "<h1 style='color:white;'>Hello</h1>";
     func1();
     }
     function func1(){
@@ -183,10 +185,13 @@ input[type=date]::-webkit-calendar-picker-indicator {
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $astr_id = $_POST["astr_id"];
-    $name = $_POST["name"];
+    $target_id = $_POST["target_id"];
+    $dest = $_POST["dest"];
+    $type = $_POST["type"];
+    $size = $_POST["size"];
+    $date = $_POST["date"];
 
-    $add = "INSERT INTO astronaut (astronaut_id,name) VALUES ($astr_id,'$name',)";
+    $add = "INSERT INTO mission (target_id,destination,type,crew_size,launch_date) VALUES ($target_id,'$dest','$type','$size','$date')";
     if (!mysqli_query($conn,$add)) {
         die("Error while adding: " . mysqli_error($conn));
     }
@@ -198,4 +203,4 @@ input[type=date]::-webkit-calendar-picker-indicator {
     ?>
 </div>
 </body>
-</html>
+</html> 

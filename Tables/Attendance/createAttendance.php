@@ -39,7 +39,6 @@ body {
     transform:translate(50%,50%);
 }
 .btn:hover{
-    background-color: ;
     color: #ADFF2F;
     border:2px solid #ADFF2F;
 }
@@ -92,7 +91,7 @@ input[type=number]::-webkit-outer-spin-button {
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="#">Astro</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -133,9 +132,9 @@ input[type=number]::-webkit-outer-spin-button {
     <div class="smp">
     <h1 style="text-align:center;">Add Attendance</h1>
     <form action="" method="POST">
-       <label for="mis_name">Mission Name</label>
+       <label for="mis_name">Mission ID</label>
        <br>
-       <input class="inp" type="text" name="mis_name">
+       <input class="inp" type="number" name="mis_id">
         <br>
         <br>
        <label for="astr_id">Astronaut ID</label>
@@ -143,11 +142,13 @@ input[type=number]::-webkit-outer-spin-button {
        <input class="inp" type="number" name="astr_id">
         <br>
         <br>
-       <input class="btn" type="submit" value="Submit">
+       <input class="btn" type="submit" value="Submit" name="btn">
     </form>
 </div>
-
+ 
     <?php
+    include '../etc/validation.php';
+
     if(array_key_exists("btn", $_POST)){
     func1();
     }
@@ -165,9 +166,9 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     $astr_id = $_POST["astr_id"];
-    $name = $_POST["name"];
+    $mission_id = $_POST["mis_id"];
 
-    $add = "INSERT INTO astronaut (astronaut_id,name) VALUES ($astr_id,'$name',)";
+    $add = "INSERT INTO atttends (astronaut_id,mission_id) VALUES ($astr_id,$mission_id)";
     if (!mysqli_query($conn,$add)) {
         die("Error while adding: " . mysqli_error($conn));
     }
