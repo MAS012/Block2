@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Attendance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
 body {
     font-family:"Segoe UI";
@@ -71,9 +73,63 @@ input[type=number]::-webkit-outer-spin-button {
     border:2px solid #02e534;
     color:white;
 }
+.navbar-brand {
+            animation-name: nav-logo;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes nav-logo {
+  0%   {color:#732CDE;}
+  20%  {color:#2F2FDE;}
+  35%  {color:#2F7BDE;}
+  50%  {color:#28DED8;}
+  65% {color:#2F7BDE;}
+  85% {color:#2F2FDE;}
+  100% {color:#732CDE;}
+}
 </style>     
 </head>
 <body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown px-5">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Astronauts</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add</a></li>
+                            <li><a class="dropdown-item" href="#">View</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown px-5">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Missions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add</a></li>
+                            <li><a class="dropdown-item" href="#">View</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown px-5">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Attendance</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add</a></li>
+                            <li><a class="dropdown-item" href="#">View</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown px-5">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Targets</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Add</a></li>
+                            <li><a class="dropdown-item" href="#">View</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="smp">
     <h1 style="text-align:center;">Add Attendance</h1>
     <form action="" method="POST">
