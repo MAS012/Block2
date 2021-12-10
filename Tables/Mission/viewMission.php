@@ -141,7 +141,7 @@ echo "<tr><th>Mission ID</th><th>Destination</th><th>Target ID</th><th>Launch Da
 while($row = mysqli_fetch_array($result)){
     echo"<tr><td>". $row["mission_id"]. "</td><td>". $row["destination"]."</td><td>". $row["target_id"]. "</td><td>". $row["launch_date"]. "</td><td>". $row["type"]. "</td><td>". $row["crew_size"]. "</td></tr>";
 }
-
+ 
 echo "</table>"
 ?>
 </div>

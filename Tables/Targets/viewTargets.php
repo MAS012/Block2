@@ -137,10 +137,10 @@ $sql1 = "SELECT * from targets";
 $result = mysqli_query($conn,$sql1);
 
 echo "<table>";
-echo "<tr><th>Astronaut ID</th><th>Name</th><th>Number of Missions</th></tr>";
+echo "<tr><th>Name</th><th>First Mission</th><th>Type</th><th>Number of Missions</th></tr>";
 
 while($row = mysqli_fetch_array($result)){
-    echo"<tr><td>". $row["astronaut_id"]. "</td><td>". $row["name"]."</td><td>". $row["no_missions"]. "</td></tr>";
+    echo"<tr><td>". $row["name"]. "</td><td>". $row["first_mission"]."</td><td>". $row["type"]."</td><td>". $row["no_missions"]. "</td></tr>";
 }
 
 echo "</table>"
