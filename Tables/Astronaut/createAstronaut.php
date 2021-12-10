@@ -192,6 +192,7 @@ font-size: 20px;
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
+            else {echo "Connected to database";}
 
             
             $name = test_input($_POST["name"]);
