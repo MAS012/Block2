@@ -182,7 +182,6 @@ font-size: 20px;
     }
 
     if(array_key_exists("btn", $_POST)){
-    echo "<h1 style='color:white;'>Hello</h1>";
     func1();
     }
     function func1(){

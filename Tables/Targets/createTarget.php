@@ -171,14 +171,12 @@ font-size: 20px;
 
 <?php
  function test_input($data) {
-    echo "hello";
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
     if(array_key_exists("btn", $_POST)){
-        echo "<h1 style='color:white;'>hello</h1>";
     func1();
     }
     function func1(){
