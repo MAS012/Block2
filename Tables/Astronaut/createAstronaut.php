@@ -196,6 +196,7 @@ font-size: 20px;
 
             
             $name = test_input($_POST["name"]);
+            echo $name;
             $mission_num = test_input($_POST["mission_num"]);
             
 
