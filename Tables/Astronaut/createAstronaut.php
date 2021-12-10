@@ -171,9 +171,14 @@ font-size: 20px;
             <br>
             <input type="submit" name="btn" value="Submit" class="btn" onSubmit="window.location.reload()">
         </form>
-        <?php
-        include '/Tables/etc/validation.php';
-
+        <?php     
+function test_input($data) {
+   echo "hello";
+   $data = trim($data);
+   $data = stripslashes($data);
+   $data = htmlspecialchars($data);
+   return $data;
+   }
         if (array_key_exists("btn", $_POST)) {
             func1();
         }
