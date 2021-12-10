@@ -173,7 +173,6 @@ font-size: 20px;
     <br>
     <input class="btn" type="submit" value="Submit" name="btn">
     </form>
-</div>
     <?php
      function test_input($data) {
         $data = trim($data);

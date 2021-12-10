@@ -153,7 +153,7 @@ font-size: 20px;
         <br>
        <input class="btn" type="submit" value="Submit" name="btn">
     </form>
-</div>
+
  
     <?php
      function test_input($data) {
@@ -192,5 +192,6 @@ font-size: 20px;
 }
     
     ?>
+    </div>
 </body>
 </html>
