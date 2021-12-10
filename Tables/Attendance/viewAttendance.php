@@ -9,13 +9,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
-    body {
-    margin:0;
-    padding:0;
-    align-items: center;
-    background-color: rgb(37, 37, 37);
-    font-family:"Segoe UI";
-}
+@font-face {
+            font-family: "Pixeboy";
+            src: url(/fonts/Pixeboy.ttf);
+        }
+        body {
+            font-family: "Pixeboy";
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            background-color: rgb(37, 37, 37);
+        }
 .smp {
 margin-top: 50px;
 background-color: rgb(65, 65, 65);
@@ -79,38 +83,38 @@ tr td:hover {
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Astro</a>
+            <a class="navbar-brand" href="/index.html">Astro</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">Astro</span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Astronauts</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Astronaut/createAstronaut.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Astronaut/viewAstronaut.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Missions</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Mission/createMission.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Mission/viewMission.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Attendance</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Attendance/createAttendance.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Attendance/viewAttendance.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Targets</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Targets/createTarget.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Targets/viewTargets.php">View</a></li>
                         </ul>
                     </li>
                 </ul>

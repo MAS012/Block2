@@ -8,13 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-body {
-    font-family:"Segoe UI";
-    margin:0;
-    padding:0;
-    align-items: center;
-    background-color: rgb(37, 37, 37);
-}
+@font-face {
+            font-family: "Pixeboy";
+            src: url(/fonts/Pixeboy.ttf);
+        }
+        body {
+            font-family: "Pixeboy";
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            background-color: rgb(37, 37, 37);
+        }
 .smp {
     color:white;
     align-items:center;
@@ -22,7 +26,7 @@ body {
     background-color: rgb(65, 65, 65);
     width: 50%;
     transform: translate(25vw,25vh);
-    padding: 2vh 2vw;
+    padding: 4vh 4vw;
     border-radius: 8px;
 }
 .btn {
@@ -91,43 +95,46 @@ input[type=date]::-webkit-calendar-picker-indicator {
   85% {color:#2F2FDE;}
   100% {color:#732CDE;}
 }
+label {
+font-size: 20px;
+}
 </style>  
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Astro</a>
+            <a class="navbar-brand" href="/index.html">Astro</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">Astro</span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Astronauts</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Astronaut/createAstronaut.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Astronaut/viewAstronaut.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Missions</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Mission/createMission.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Mission/viewMission.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Attendance</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Attendance/createAttendance.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Attendance/viewAttendance.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Targets</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Add</a></li>
-                            <li><a class="dropdown-item" href="#">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Targets/createTarget.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Targets/viewTargets.php">View</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -166,7 +173,7 @@ input[type=date]::-webkit-calendar-picker-indicator {
     </form>
 </div>
     <?php
-    include '../etc/validation.php';
+    include '/Tables/etc/validation.php';
 
     if(array_key_exists("btn", $_POST)){
     echo "<h1 style='color:white;'>Hello</h1>";
@@ -186,14 +193,14 @@ input[type=date]::-webkit-calendar-picker-indicator {
     }
 
     $target_id = $_POST["target_id"];
-    $dest = $_POST["dest"];
-    $type = $_POST["type"];
-    $size = $_POST["size"];
-    $date = $_POST["date"];
+    $dest = test_input($_POST["dest"]);
+    $type = test_input($_POST["type"]);
+    $size = test_input($_POST["size"]);
+    $date = test_input($_POST["date"]);
 
     $add = "INSERT INTO mission (target_id,destination,type,crew_size,launch_date) VALUES ($target_id,'$dest','$type','$size','$date')";
     if (!mysqli_query($conn,$add)) {
-        die("Error while adding: " . mysqli_error($conn));
+        die("<h2 style='color:white;padding: 10px 0; width:100%;text-align:center;border-radius:20px;background-color:red;margin-top:40px; margin-bottom:20px;'>Error</h2>");
     }
     else {
         echo "<h4 class='success'>Successfully added</h4>";
