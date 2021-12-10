@@ -179,6 +179,8 @@ font-size: 20px;
         }
         function func1()
         {
+            echo "Running function...";
+
             $servername = "localhost";
             $username = "lord"; // default username for localhost is root
             $password = "kira2216"; // default password for localhost is empty
