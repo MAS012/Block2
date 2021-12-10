@@ -72,10 +72,15 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 .success {
-    background-color: #95e5a7;
-    border:2px solid #02e534;
-    color:white;
-}
+            background-color: #95e5a7;
+            border: 2px solid #02e534;
+            color: white;
+            margin-top: 50px;
+            padding: 10px 0;
+            border-radius: 20px;
+            width: 100%;
+            text-align: center;
+        }
 .navbar-brand {
             animation-name: nav-logo;
             animation-duration: 4s;
