@@ -156,7 +156,13 @@ font-size: 20px;
 </div>
  
     <?php
-    include '/Tables/etc/validation.php';
+     function test_input($data) {
+        echo "hello";
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
     if(array_key_exists("btn", $_POST)){
     func1();
