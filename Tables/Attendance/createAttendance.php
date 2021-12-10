@@ -80,6 +80,8 @@ input[type=number]::-webkit-outer-spin-button {
             animation-name: nav-logo;
             animation-duration: 4s;
             animation-iteration-count: infinite;
+            text-decoration: underline;
+            font-size: 30px;
         }
         @keyframes nav-logo {
   0%   {color:#732CDE;}
@@ -161,8 +163,8 @@ font-size: 20px;
     }
     function func1(){
     $servername = "localhost";
-    $username = "root"; // default username for localhost is root
-    $password = ""; // default password for localhost is empty
+    $username = "lord"; // default username for localhost is root
+    $password = "kira2216"; // default password for localhost is empty
     $dbname = "astro"; // database name
     
     // Create connection

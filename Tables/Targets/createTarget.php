@@ -177,8 +177,8 @@ include '/Tables/etc/validation.php';
     }
     function func1(){
     $servername = "localhost";
-    $username = "root"; // default username for localhost is root
-    $password = ""; // default password for localhost is empty
+    $username = "lord"; // default username for localhost is root
+    $password = "kira2216"; // default password for localhost is empty
     $dbname = "astro"; // database name
     
     // Create connection

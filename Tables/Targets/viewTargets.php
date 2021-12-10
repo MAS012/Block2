@@ -68,6 +68,8 @@ tr td:hover {
             animation-name: nav-logo;
             animation-duration: 4s;
             animation-iteration-count: infinite;
+            text-decoration: underline;
+            font-size: 30px;
         }
         @keyframes nav-logo {
   0%   {color:#732CDE;}
@@ -125,7 +127,7 @@ tr td:hover {
         <h1>Targets List</h1>
   <?php
 
-$conn = mysqli_connect("localhost","root","");
+$conn = mysqli_connect("localhost","lord","kira2216");
 mysqli_select_db($conn,"astro");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

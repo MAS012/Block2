@@ -69,6 +69,8 @@ tr td:hover {
             animation-name: nav-logo;
             animation-duration: 4s;
             animation-iteration-count: infinite;
+            text-decoration: underline;
+            font-size: 30px;
         }
         @keyframes nav-logo {
   0%   {color:#732CDE;}
@@ -92,29 +94,29 @@ tr td:hover {
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Astronauts</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/Astronaut/createAstronaut.php">Add</a></li>
-                            <li><a class="dropdown-item" href="/Astronaut/viewAstronaut.php">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Astronaut/createAstronaut.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Astronaut/viewAstronaut.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Missions</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/Mission/createMission.php">Add</a></li>
-                            <li><a class="dropdown-item" href="/Mission/viewMission.php">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Mission/createMission.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Mission/viewMission.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Attendance</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/Attendance/createAttendance.php">Add</a></li>
-                            <li><a class="dropdown-item" href="/Attendance/viewAttendance.php">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Attendance/createAttendance.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Attendance/viewAttendance.php">View</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown px-5">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Targets</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/Targets/createTarget.php">Add</a></li>
-                            <li><a class="dropdown-item" href="/Targets/viewTargets.php">View</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Targets/createTarget.php">Add</a></li>
+                            <li><a class="dropdown-item" href="/Tables/Targets/viewTargets.php">View</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -125,7 +127,7 @@ tr td:hover {
         <h1>Astronauts List</h1>
   <?php
 
-$conn = mysqli_connect("localhost","root","");
+$conn = mysqli_connect("localhost","lord","kira2216");
 mysqli_select_db($conn,"astro");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
