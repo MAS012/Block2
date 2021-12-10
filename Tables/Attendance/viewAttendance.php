@@ -9,10 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
+        /* adding fonts */
 @font-face {
             font-family: "Pixeboy";
             src: url(/fonts/Pixeboy.ttf);
         }
+        /* overall body design */
         body {
             font-family: "Pixeboy";
             margin: 0;
@@ -20,6 +22,7 @@
             align-items: center;
             background-color: rgb(37, 37, 37);
         }
+        /* Designing box that includes form */
 .smp {
 margin-top: 50px;
 background-color: rgb(65, 65, 65);
@@ -30,11 +33,13 @@ width: 50%;
     border-radius: 8px;
     font-size:22px;
 }
+/* Designing table */
 table {
     width:100%;
     border-collapse: collapse;
     overflow: hidden;
 }
+/* Designing table headers and datas*/
 th,td {
     text-align: center;
     padding: 10px;
@@ -48,9 +53,11 @@ th {
 td {
     background-color: rgb(85, 167, 208);
 }
+/* Designing odd datas */
 td:nth-child(odd){
     background-color: rgb(70, 157, 201);
 }
+/* Designing first and last lines */
 table:first-child {
     border-top:2px solid black;
     border-top-left-radius: 8px;
@@ -60,10 +67,12 @@ table:last-child {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+/* Rows on hover */
 tr td:hover {
     padding:16px;
     background-image: linear-gradient(rgba(0,0,0,0.2) 0 0);
 }
+/* Designing Logo in navbar*/
 .navbar-brand {
             animation-name: nav-logo;
             animation-duration: 4s;
@@ -71,6 +80,7 @@ tr td:hover {
             text-decoration: underline;
             font-size: 30px;
         }
+        /* Color changing animation*/
         @keyframes nav-logo {
   0%   {color:#732CDE;}
   20%  {color:#2F2FDE;}
@@ -83,17 +93,25 @@ tr td:hover {
 </style>
 </head>
 <body>
+    <!-- Website Body -->
+     <!-- Navbar -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
+            <!-- Logo link to home page -->
             <a class="navbar-brand" href="/index.html">Astro</a>
+            <!-- Responsive Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon">Astro</span>
             </button>
+            <!-- Resizing navbar in different device width -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
+            <!-- Web Page Links List -->    
+            <ul class="navbar-nav">
                     <li class="nav-item dropdown px-5">
+                        <!-- Web Page Link -->
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Astronauts</a>
-                        <ul class="dropdown-menu">
+                    <!-- Dropdown Menu -->    
+                    <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/Tables/Astronaut/createAstronaut.php">Add</a></li>
                             <li><a class="dropdown-item" href="/Tables/Astronaut/viewAstronaut.php">View</a></li>
                         </ul>
@@ -123,19 +141,22 @@ tr td:hover {
             </div>
         </div>
     </nav>
+    <!-- End of Navbar -->
+    <!-- Table Box -->
 <div class="smp">
         <h1>Attendance List</h1>
   <?php
-
+//Starting PHP
+//Connecting to database
 $conn = mysqli_connect("localhost","lord","kira2216");
 mysqli_select_db($conn,"astro");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     }
-
+//Setting query
 $sql1 = "SELECT * from atttends";
 $result = mysqli_query($conn,$sql1);
-
+//Putting out result
 echo "<table>";
 echo "<tr><th>Astronaut ID</th><th>Mission ID</th></tr>";
 while($row = mysqli_fetch_array($result)){
@@ -144,9 +165,7 @@ while($row = mysqli_fetch_array($result)){
 
 echo "</table>"
 ?>
+<!-- The end -->
 </div>
-
-
-
 </body>
 </html>
